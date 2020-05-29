@@ -4,12 +4,13 @@
 Very early version! 
 
 -----------------------------
-- based on g4eml Longstone TRX
+- based on Longstone TRX
 - 500 kHz Bandwidth
 - fcenter set for each band in langstone.conf
 - show frequency marker
 - PTT with Pluto GPIO fix
 - todo:
+- solve frequency acuracy 
 -  solve poor TX audio quality 
 -  stop edges for frequency marker
 -  disable unwanted buttons for QO100
