@@ -1,26 +1,29 @@
 # SDR TRX by oe5rnl & oe5nvl - based on g4eml Langstone
 
 
-FOR TESTS ONLY!
+Very early Version! 
 
 -----------------------------
 - based on Longstone TRX
 - 500 kHz Bandwidth
-- fcenter set for each band in langstne.conf
-    testet only on 70cm !!!
-- Frequency marker
+- fcenter set for each band in langstone.conf
+- show frequency marker
 - PTT with Pluto GPIO fix
 - todo:
--  test TX
+-  solve poor TX audio quality 
 -  stop edges for frequency marker
-
+-  disable unwanted buttons for QO100
+- ...
+- ...
 -----------------------------
 
+```sh
+wget https://raw.githubusercontent.com/oe5rnl/Langstone-500/master/install.sh
+chmod +x install.sh
+./install.sh
+```
 
-
-
-
-
+#Original info from g4eml
 
 # Langstone SDR Transceiver
 
