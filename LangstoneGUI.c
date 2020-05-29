@@ -1691,7 +1691,7 @@ void setHwRxFreq(double fr)
 
   
   rxoffsethz = bandCenter[band] - bandRxOffset[band]*1e6;
-  rxoffsethz =  rxfreqhz - rxoffsethz;
+  rxoffsethz = rxfreqhz - rxoffsethz ;
 
 // index=(offset/sample*256)+256
 
@@ -2100,10 +2100,10 @@ while(fscanf(conffile,"%s %s [^\n]\n",variable,value) !=EOF)
       sprintf(vname,"bandCenter%02d",b); 
       if(strstr(variable,vname)) sscanf(value,"%lf",&bandCenter[b]); 
 
-      if(strstr(variable,"bandCenter11")) {
-        sprintf(st, "bandCenter11=%lf\n",value);
-        pstr(st);  
-      }
+      // if(strstr(variable,"bandCenter11")) {
+      //   sprintf(st, "bandCenter11=%lf\n",value);
+      //   pstr(st);  
+      // }
     }
 
     if(strstr(variable,"currentBand")) sscanf(value,"%d",&band);
@@ -2124,38 +2124,40 @@ return 0;
 
 int writeConfig(void)
 {
-// FILE * conffile;
-// char variable[80];
-// int value;
+FILE * conffile;
+char variable[80];
+int value;
 
-// bandFreq[band]=freq;
+bandFreq[band]=freq;
 
-// conffile=fopen("/home/pi/Langstone-500/Langstone.conf","w");
+conffile=fopen("/home/pi/Langstone-500/Langstone.conf","w");
 
-// if(conffile==NULL)
-//   {
-//     return -1;
-//   }
+if(conffile==NULL)
+  {
+    return -1;
+  }
 
-// for(int b=0;b<numband;b++)
-// {
-//   fprintf(conffile,"bandFreq%02d %lf\n",b,bandFreq[b]);
-//   fprintf(conffile,"bandTxOffset%02d %lf\n",b,bandTxOffset[b]);
-//   fprintf(conffile,"bandRxOffset%02d %lf\n",b,bandRxOffset[b]);
-//   fprintf(conffile,"bandBits%02d %d\n",b,bandBits[b]);
-//   fprintf(conffile,"bandFFTRef%02d %d\n",b,bandFFTRef[b]);
-//   fprintf(conffile,"bandSquelch%02d %d\n",b,bandSquelch[b]);
-//   fprintf(conffile,"bandTxAtt%02d %d\n",b,bandTxAtt[b]);
-// }
+for(int b=0;b<numband;b++)
+{
+  fprintf(conffile,"bandFreq%02d %lf\n",b,bandFreq[b]);
+  fprintf(conffile,"bandTxOffset%02d %lf\n",b,bandTxOffset[b]);
+  fprintf(conffile,"bandRxOffset%02d %lf\n",b,bandRxOffset[b]);
+  fprintf(conffile,"bandBits%02d %d\n",b,bandBits[b]);
+  fprintf(conffile,"bandFFTRef%02d %d\n",b,bandFFTRef[b]);
+  fprintf(conffile,"bandSquelch%02d %d\n",b,bandSquelch[b]);
+  fprintf(conffile,"bandTxAtt%02d %d\n",b,bandTxAtt[b]);
+  fprintf(conffile,"bandCenter%02d %lf\n",b,bandCenter[b]);
 
-// fprintf(conffile,"currentBand %d\n",band);
-// fprintf(conffile,"tuneDigit %d\n",tuneDigit);
-// fprintf(conffile,"mode %d\n",mode);
-// fprintf(conffile,"SSBMic %d\n",SSBMic);
-// fprintf(conffile,"FMMic %d\n",FMMic);
-// fprintf(conffile,"volume %d\n",volume);
+}
 
-// fclose(conffile);
+fprintf(conffile,"currentBand %d\n",band);
+fprintf(conffile,"tuneDigit %d\n",tuneDigit);
+fprintf(conffile,"mode %d\n",mode);
+fprintf(conffile,"SSBMic %d\n",SSBMic);
+fprintf(conffile,"FMMic %d\n",FMMic);
+fprintf(conffile,"volume %d\n",volume);
+
+fclose(conffile);
 return 0;
 
 }

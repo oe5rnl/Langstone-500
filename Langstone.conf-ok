@@ -5,7 +5,6 @@ bandBits00 0
 bandFFTRef00 -30
 bandSquelch00 30
 bandTxAtt00 0
-bandCenter00 70200000.000000
 bandFreq01 145.700000
 bandTxOffset01 0.000000
 bandRxOffset01 0.000000
@@ -13,15 +12,13 @@ bandBits01 1
 bandFFTRef01 -30
 bandSquelch01 30
 bandTxAtt01 0
-bandCenter01 145700000.000000
-bandFreq02 438.804800
+bandFreq02 438.736000
 bandTxOffset02 0.000000
 bandRxOffset02 0.000000
 bandBits02 2
-bandFFTRef02 0
-bandSquelch02 75
+bandFFTRef02 -40
+bandSquelch02 54
 bandTxAtt02 0
-bandCenter02 438736000.000000
 bandFreq03 1296.200000
 bandTxOffset03 0.000000
 bandRxOffset03 0.000000
@@ -29,7 +26,6 @@ bandBits03 3
 bandFFTRef03 -46
 bandSquelch03 30
 bandTxAtt03 0
-bandCenter03 1296200000.000000
 bandFreq04 2320.200000
 bandTxOffset04 0.000000
 bandRxOffset04 0.000000
@@ -37,7 +33,6 @@ bandBits04 4
 bandFFTRef04 -30
 bandSquelch04 30
 bandTxAtt04 0
-bandCenter04 2320200000.000000
 bandFreq05 2400.100000
 bandTxOffset05 0.000000
 bandRxOffset05 0.000000
@@ -45,7 +40,6 @@ bandBits05 5
 bandFFTRef05 -30
 bandSquelch05 30
 bandTxAtt05 0
-bandCenter05 2400200000.000000
 bandFreq06 3400.100000
 bandTxOffset06 0.000000
 bandRxOffset06 0.000000
@@ -53,7 +47,6 @@ bandBits06 6
 bandFFTRef06 -30
 bandSquelch06 30
 bandTxAtt06 0
-bandCenter06 3400200000.000000
 bandFreq07 5760.100000
 bandTxOffset07 0.000000
 bandRxOffset07 0.000000
@@ -61,7 +54,6 @@ bandBits07 7
 bandFFTRef07 -30
 bandSquelch07 30
 bandTxAtt07 0
-bandCenter07 5760200000.000000
 bandFreq08 10368.200000
 bandTxOffset08 9936.000000
 bandRxOffset08 9936.000000
@@ -69,7 +61,6 @@ bandBits08 8
 bandFFTRef08 -30
 bandSquelch08 30
 bandTxAtt08 0
-bandCenter08 10368200000.000000
 bandFreq09 24048.200000
 bandTxOffset09 23616.000000
 bandRxOffset09 23616.000000
@@ -77,7 +68,6 @@ bandBits09 9
 bandFFTRef09 -30
 bandSquelch09 30
 bandTxAtt09 0
-bandCenter09 24048200000.000000
 bandFreq10 739.750000
 bandTxOffset10 0.000000
 bandRxOffset10 0.000000
@@ -85,7 +75,6 @@ bandBits10 10
 bandFFTRef10 -30
 bandSquelch10 30
 bandTxAtt10 0
-bandCenter10 739750000.000000
 bandFreq11 10489.750000
 bandTxOffset11 8089.500000
 bandRxOffset11 9750.000000
@@ -93,10 +82,21 @@ bandBits11 11
 bandFFTRef11 -30
 bandSquelch11 30
 bandTxAtt11 0
-bandCenter11 10489750000.000000
 currentBand 2
-tuneDigit 10
+tuneDigit 7
 mode 0
 SSBMic 3
-FMMic 1
-volume 4
+FMMic 50
+volume 20
+bandCenter00 70200000.000000
+bandCenter01 145700000.000000
+bandCenter02 438736000.000000
+bandCenter03 1296200000.000000
+bandCenter04 2320200000.000000
+bandCenter05 2400200000.000000
+bandCenter06 3400200000.000000
+bandCenter07 5760200000.000000
+bandCenter08 10368200000.000000
+bandCenter09 24048200000.000000
+bandCenter10 00739750000.000000
+bandCenter11 10489750000.000000
