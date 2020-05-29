@@ -1,3 +1,27 @@
+# SDR TRX by oe5rnl & oe5nvl - based on g4eml Langstone
+
+
+FOR TESTS ONLY!
+
+-----------------------------
+- based on Longstone TRX
+- 500 kHz Bandwidth
+- fcenter set for each band in langstne.conf
+    testet only on 70cm !!!
+- Frequency marker
+- PTT with Pluto GPIO fix
+- todo:
+-  test TX
+-  stop edges for frequency marker
+
+-----------------------------
+
+
+
+
+
+
+
 # Langstone SDR Transceiver
 
 This is an experimental project to produce a simple VHF, UHF and Microwave SDR Transceiver operating on SSB CW and FM.
