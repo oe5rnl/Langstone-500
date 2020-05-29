@@ -4,7 +4,7 @@
 Very early version! 
 
 -----------------------------
-- based on Longstone TRX
+- based on g4eml Longstone TRX
 - 500 kHz Bandwidth
 - fcenter set for each band in langstone.conf
 - show frequency marker
