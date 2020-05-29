@@ -1242,7 +1242,8 @@ if(buttonTouched(funcButtonsX+buttonSpaceX*6,funcButtonsY))   //Button 7 = PTT  
       sendTxFifo("Q");       //kill the SDR Tx
       sendRxFifo("Q");       //kill the SDR Rx
       writeConfig();
-      system("sudo cp /home/pi/Langstone-500/splash.bgra /dev/fb0");
+      //system("sudo cp /home/pi/Langstone-500/splash.bgra /dev/fb0");
+      system("sudo cp /home/pi/Langstone-500/Langstone1.bgra /dev/fb0");
       sleep(2);
       system("sudo poweroff");                          
       return;      

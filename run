@@ -19,7 +19,8 @@ mkfifo /tmp/langstoneRx
 if !(ps -ax |grep -v grep| grep -q Lang_TX.py) then
 	sudo amixer -c1 cset numid=6 100%  > /dev/null 2>&1
 	sudo amixer -c1 cset numid=8 50%  > /dev/null 2>&1
-	sudo cp /home/pi/Langstone-500/splashload.bgra /dev/fb0
+	#sudo cp /home/pi/Langstone-500/splashload.bgra /dev/fb0
+	sudo cp /home/pi/Langstone-500/Langstone1.bgra /dev/fb0
 	sudo raspi-gpio set 17,18 ip pu
 
    
