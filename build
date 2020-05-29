@@ -1,0 +1,1 @@
+cc /home/pi/Langstone-500/LangstoneGUI.c -o /home/pi/Langstone-500/GUI -liio -lwiringPi -lm

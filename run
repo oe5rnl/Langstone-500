@@ -1,0 +1,58 @@
+#!/bin/bash
+
+if test -e /tmp/langstonefft ; then
+rm /tmp/langstonefft
+fi
+mkfifo /tmp/langstonefft
+
+if test -e /tmp/langstoneTx ;then
+rm /tmp/langstoneTx
+fi
+mkfifo /tmp/langstoneTx
+
+if test -e /tmp/langstoneRx ;then
+rm /tmp/langstoneRx
+fi
+mkfifo /tmp/langstoneRx
+
+
+if !(ps -ax |grep -v grep| grep -q Lang_TX.py) then
+	sudo amixer -c1 cset numid=6 100%  > /dev/null 2>&1
+	sudo amixer -c1 cset numid=8 50%  > /dev/null 2>&1
+	sudo cp /home/pi/Langstone-500/splashload.bgra /dev/fb0
+	sudo raspi-gpio set 17,18 ip pu
+
+   
+ retry=0
+ until [ ${retry} -ge 4 ]
+do
+	(iio_info -n pluto.local 2>/dev/null | grep -q PlutoSDR) && break
+	retry=$[${retry}+1]
+	sleep 1
+done
+
+if [ ${retry} -ge 4 ]; then
+  clear
+  echo "Pluto Failed to Respond at pluto.local"
+  echo "Check Connection and Power"
+  exit 1
+fi
+   
+sleep 1 
+   
+  python /home/pi/Langstone-500/Lang_TX.py > /tmp/LangstoneTX.log 2>&1 &
+  python /home/pi/Langstone-500/Lang_RX.py > /tmp/LangstoneRX.log 2>&1 &
+	if (ps -ax | grep -v grep| grep -q Lang_TX.py)then
+	  /home/pi/Langstone-500/GUI > /tmp/LangstoneGUI.log 2>&1
+	else
+		clear
+		echo ERROR:- Lang_TX.py failed to start.
+		cat /tmp/LangstoneTX.log
+	fi
+else
+	echo Langstone is already running. Use ./stop first.
+fi
+
+
+
+
