@@ -1,7 +1,7 @@
 # SDR TRX by oe5rnl & oe5nvl - based on g4eml Langstone
 
 
-Very early Version! 
+Very early version! 
 
 -----------------------------
 - based on Longstone TRX
@@ -23,7 +23,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-#Original info from g4eml
+# Original info from g4eml
 
 # Langstone SDR Transceiver
 
