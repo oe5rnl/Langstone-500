@@ -18,6 +18,8 @@ Very early version!
 - ...
 -----------------------------
 
+![alt TRX](https://raw.githubusercontent.com/oe5rnl/Langstone-500/TRX.jpg)
+
 ```sh
 wget https://raw.githubusercontent.com/oe5rnl/Langstone-500/master/install.sh
 chmod +x install.sh
